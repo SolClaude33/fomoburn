@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <clipPath id="fb-clipL"><path d="M0 0H512V512H0Z M182 196.25 L0 196.25 L0 316.25 L147.5 316.25Z" clip-rule="evenodd"/></clipPath>
+    <clipPath id="fb-inER"><ellipse rx="112.5" ry="125" transform="translate(340.75 256) skewX(-10.8)"/></clipPath>
+  </defs>
+  <g transform="translate(256 262) scale(.84) translate(-256 -250)">
+    <path fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)" d="M256 476 C140 476 46 404 46 300 C46 222 86 168 116 104 C136 156 158 184 190 200 C178 128 210 66 272 6 C302 88 350 128 354 190 C376 158 402 118 422 66 C458 148 468 222 468 300 C468 404 372 476 256 476Z"/>
+    <path fill="#ffb021" transform="translate(256 256) skewX(-10.8) translate(-256 -256)" d="M258 420 C176 420 128 366 128 300 C128 240 162 204 184 160 C198 194 214 212 240 222 C236 170 254 128 292 84 C308 142 352 180 368 230 C378 256 384 278 384 300 C384 368 336 420 258 420Z"/>
+    <g transform="translate(256 336) scale(.8) translate(-256 -257)">
+      <g fill="#0b091f" stroke="#0b091f" stroke-width="22"><ellipse rx="112.5" ry="125" transform="translate(340.75 256) skewX(-10.8)"/><ellipse rx="112.5" ry="125" transform="translate(168 256) skewX(-10.8)"/></g>
+      <g clip-path="url(#fb-clipL)"><ellipse rx="112.5" ry="125" transform="translate(168 256) skewX(-10.8)" fill="#eaedff"/></g>
+      <ellipse rx="112.5" ry="125" transform="translate(340.75 256) skewX(-10.8)" fill="#eaedff"/>
+      <path fill="#0b091f" clip-path="url(#fb-inER)" d="M364 196.25 L100 196.25 L100 316.25 L330 316.25Z"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Fomo Burn · logo lab</title>
+<style>
+  :root{--navy:#0b091f;--lav:#eaedff}
+  body{margin:0;background:#15132b;color:#eaedff;font:14px/1.4 system-ui,sans-serif;padding:24px}
+  .grid{display:flex;flex-wrap:wrap;gap:24px}
+  figure{margin:0}
+  figcaption{margin-top:8px;opacity:.7}
+  svg{display:block;border-radius:16px}
+  .small{display:flex;gap:16px;align-items:center;margin-top:24px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <!-- fomo mark, reconstructed from the 512px PNG: two sheared ellipses with parallelogram counters -->
+    <clipPath id="clipR"><path d="M0 0H512V512H0Z M364 196.25 L150 196.25 L150 316.25 L330 316.25Z" clip-rule="evenodd"/></clipPath>
+    <clipPath id="clipL"><path d="M0 0H512V512H0Z M182 196.25 L0 196.25 L0 316.25 L147.5 316.25Z" clip-rule="evenodd"/></clipPath>
+    <clipPath id="inER"><ellipse rx="112.5" ry="125" transform="translate(340.75 256) skewX(-10.8)"/></clipPath>
+    <!-- right O sits ON TOP of the left O: its counter knocks out the left O too -->
+    <mask id="markMask" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+      <rect width="512" height="512" fill="#000"/>
+      <g clip-path="url(#clipL)"><ellipse rx="112.5" ry="125" transform="translate(168 256) skewX(-10.8)" fill="#fff"/></g>
+      <ellipse rx="112.5" ry="125" transform="translate(340.75 256) skewX(-10.8)" fill="#fff"/>
+      <path d="M364 196.25 L100 196.25 L100 316.25 L330 316.25Z" clip-path="url(#inER)" fill="#000"/>
+    </mask>
+    <g id="mark"><rect width="512" height="512" mask="url(#markMask)"/></g>
+    </g>
+    <!-- flames drawn upright, then sheared with the same italic angle as the mark -->
+    <path id="flameOuter" d="M256 476 C140 476 46 404 46 300 C46 222 86 168 116 104 C136 156 158 184 190 200 C178 128 210 66 272 6 C302 88 350 128 354 190 C376 158 402 118 422 66 C458 148 468 222 468 300 C468 404 372 476 256 476Z"/>
+    <path id="flameInner" d="M258 420 C176 420 128 366 128 300 C128 240 162 204 184 160 C198 194 214 212 240 222 C236 170 254 128 292 84 C308 142 352 180 368 230 C378 256 384 278 384 300 C384 368 336 420 258 420Z"/>
+    <g id="backing"><ellipse rx="112.5" ry="125" transform="translate(340.75 256) skewX(-10.8)"/><ellipse rx="112.5" ry="125" transform="translate(168 256) skewX(-10.8)"/></g>
+    <clipPath id="counters"><path d="M182 196.25 L0 196.25 L0 316.25 L147.5 316.25Z"/><path d="M364 196.25 L100 196.25 L100 316.25 L330 316.25Z" clip-path="url(#inER)"/></clipPath>
+    <clipPath id="circ"><circle cx="256" cy="256" r="256"/></clipPath>
+    <filter id="halo" x="-20%" y="-20%" width="140%" height="140%"><feMorphology operator="dilate" radius="9"/></filter>
+    <g id="fire">
+      <use href="#flameOuter" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+    </g>
+  </defs>
+</svg>
+
+<div class="grid">
+<figure><div style="display:flex;gap:16px;align-items:flex-end"><svg width="300" height="300" viewBox="0 0 512 512"><g ><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ffb021" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+<g clip-path="url(#counters)"><g transform="translate(256 257) scale(1.25) translate(-256 -336)"><use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ffb021" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/></g></g>
+<use href="#mark" fill="#eaedff"/></g></g></g></svg><svg width="300" height="300" viewBox="0 0 512 512"><g clip-path="url(#circ)"><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ffb021" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+<g clip-path="url(#counters)"><g transform="translate(256 257) scale(1.25) translate(-256 -336)"><use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ffb021" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/></g></g>
+<use href="#mark" fill="#eaedff"/></g></g></g></svg></div>
+<div class="small"><svg width="64" height="64" viewBox="0 0 512 512"><g clip-path="url(#circ)"><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ffb021" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+<g clip-path="url(#counters)"><g transform="translate(256 257) scale(1.25) translate(-256 -336)"><use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ffb021" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/></g></g>
+<use href="#mark" fill="#eaedff"/></g></g></g></svg><svg width="48" height="48" viewBox="0 0 512 512"><g clip-path="url(#circ)"><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ffb021" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+<g clip-path="url(#counters)"><g transform="translate(256 257) scale(1.25) translate(-256 -336)"><use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ffb021" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/></g></g>
+<use href="#mark" fill="#eaedff"/></g></g></g></svg><svg width="32" height="32" viewBox="0 0 512 512"><g clip-path="url(#circ)"><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ffb021" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+<g clip-path="url(#counters)"><g transform="translate(256 257) scale(1.25) translate(-256 -336)"><use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ffb021" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/></g></g>
+<use href="#mark" fill="#eaedff"/></g></g></g></svg><img src="fomo-logo-original.png" width="48" style="border-radius:50%"></div><figcaption>D · recomendada: contraformas abiertas, el fuego se ve a través</figcaption></figure>
+<figure><div style="display:flex;gap:16px;align-items:flex-end"><svg width="300" height="300" viewBox="0 0 512 512"><g ><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ffb021" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+
+<use href="#mark" fill="#eaedff"/></g></g></g></svg><svg width="300" height="300" viewBox="0 0 512 512"><g clip-path="url(#circ)"><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ffb021" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+
+<use href="#mark" fill="#eaedff"/></g></g></g></svg></div>
+<div class="small"><svg width="64" height="64" viewBox="0 0 512 512"><g clip-path="url(#circ)"><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ffb021" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+
+<use href="#mark" fill="#eaedff"/></g></g></g></svg><svg width="48" height="48" viewBox="0 0 512 512"><g clip-path="url(#circ)"><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ffb021" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+
+<use href="#mark" fill="#eaedff"/></g></g></g></svg><svg width="32" height="32" viewBox="0 0 512 512"><g clip-path="url(#circ)"><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ffb021" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+
+<use href="#mark" fill="#eaedff"/></g></g></g></svg><img src="fomo-logo-original.png" width="48" style="border-radius:50%"></div><figcaption>A · 2 tonos, contraformas oscuras</figcaption></figure>
+<figure><div style="display:flex;gap:16px;align-items:flex-end"><svg width="300" height="300" viewBox="0 0 512 512"><g ><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#5b4bff" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ff5a2a" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+<g clip-path="url(#counters)"><g transform="translate(256 257) scale(1.25) translate(-256 -336)"><use href="#flameOuter" fill="#5b4bff" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ff5a2a" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/></g></g>
+<use href="#mark" fill="#eaedff"/></g></g></g></svg><svg width="300" height="300" viewBox="0 0 512 512"><g clip-path="url(#circ)"><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#5b4bff" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ff5a2a" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+<g clip-path="url(#counters)"><g transform="translate(256 257) scale(1.25) translate(-256 -336)"><use href="#flameOuter" fill="#5b4bff" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ff5a2a" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/></g></g>
+<use href="#mark" fill="#eaedff"/></g></g></g></svg></div>
+<div class="small"><svg width="64" height="64" viewBox="0 0 512 512"><g clip-path="url(#circ)"><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#5b4bff" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ff5a2a" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+<g clip-path="url(#counters)"><g transform="translate(256 257) scale(1.25) translate(-256 -336)"><use href="#flameOuter" fill="#5b4bff" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ff5a2a" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/></g></g>
+<use href="#mark" fill="#eaedff"/></g></g></g></svg><svg width="48" height="48" viewBox="0 0 512 512"><g clip-path="url(#circ)"><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#5b4bff" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ff5a2a" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+<g clip-path="url(#counters)"><g transform="translate(256 257) scale(1.25) translate(-256 -336)"><use href="#flameOuter" fill="#5b4bff" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ff5a2a" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/></g></g>
+<use href="#mark" fill="#eaedff"/></g></g></g></svg><svg width="32" height="32" viewBox="0 0 512 512"><g clip-path="url(#circ)"><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#5b4bff" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ff5a2a" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+<g clip-path="url(#counters)"><g transform="translate(256 257) scale(1.25) translate(-256 -336)"><use href="#flameOuter" fill="#5b4bff" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/><use href="#flameInner" fill="#ff5a2a" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/></g></g>
+<use href="#mark" fill="#eaedff"/></g></g></g></svg><img src="fomo-logo-original.png" width="48" style="border-radius:50%"></div><figcaption>B · violeta fomo + núcleo naranja</figcaption></figure>
+<figure><div style="display:flex;gap:16px;align-items:flex-end"><svg width="300" height="300" viewBox="0 0 512 512"><g ><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+<g clip-path="url(#counters)"><g transform="translate(256 257) scale(1.25) translate(-256 -336)"><use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/></g></g>
+<use href="#mark" fill="#eaedff"/></g></g></g></svg><svg width="300" height="300" viewBox="0 0 512 512"><g clip-path="url(#circ)"><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+<g clip-path="url(#counters)"><g transform="translate(256 257) scale(1.25) translate(-256 -336)"><use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/></g></g>
+<use href="#mark" fill="#eaedff"/></g></g></g></svg></div>
+<div class="small"><svg width="64" height="64" viewBox="0 0 512 512"><g clip-path="url(#circ)"><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+<g clip-path="url(#counters)"><g transform="translate(256 257) scale(1.25) translate(-256 -336)"><use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/></g></g>
+<use href="#mark" fill="#eaedff"/></g></g></g></svg><svg width="48" height="48" viewBox="0 0 512 512"><g clip-path="url(#circ)"><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+<g clip-path="url(#counters)"><g transform="translate(256 257) scale(1.25) translate(-256 -336)"><use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/></g></g>
+<use href="#mark" fill="#eaedff"/></g></g></g></svg><svg width="32" height="32" viewBox="0 0 512 512"><g clip-path="url(#circ)"><rect width="512" height="512" fill="#0b091f"/><g transform="translate(256 262) scale(.84) translate(-256 -250)">
+<use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/>
+<g transform="translate(256 336) scale(.8) translate(-256 -257)">
+<use href="#backing" fill="#0b091f" stroke="#0b091f" stroke-width="22"/>
+<g clip-path="url(#counters)"><g transform="translate(256 257) scale(1.25) translate(-256 -336)"><use href="#flameOuter" fill="#ff4d1f" transform="translate(256 256) skewX(-10.8) translate(-256 -256)"/></g></g>
+<use href="#mark" fill="#eaedff"/></g></g></g></svg><img src="fomo-logo-original.png" width="48" style="border-radius:50%"></div><figcaption>C · fuego 1 tono</figcaption></figure>
+  <figure>
+    <svg width="360" height="360" viewBox="0 0 512 512">
+      <rect width="512" height="512" fill="#0b091f"/>
+      <use href="#mark" fill="#eaedff"/>
+    </svg>
+    <figcaption>Ref · marca reconstruida (vector)</figcaption>
+  </figure>
+  <figure>
+    <img src="fomo-logo-original.png" width="360" height="360" style="border-radius:16px">
+    <figcaption>Ref · PNG original</figcaption>
+  </figure>
+</div>
+</body>
+</html>

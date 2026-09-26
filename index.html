@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fomo Burn — every thesis burns the supply</title>
+  <meta name="description" content="Post your thesis on the token's fomo page. For every thesis, the dev uses the 3% trading fees to buy back and burn the token.">
+  <meta name="theme-color" content="#0b091f">
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="icon" type="image/png" href="assets/fomo-burn-logo-256.png">
+  <meta property="og:title" content="Fomo Burn — every thesis burns the supply">
+  <meta property="og:description" content="Post a thesis on fomo. The 3% fees buy the token back and burn it.">
+  <meta property="og:image" content="assets/fomo-burn-logo-1024.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/hero-earth-1600.webp" imagesrcset="assets/hero-earth-960.webp 960w, assets/hero-earth-1600.webp 1600w, assets/hero-earth-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <clipPath id="fb-clipL"><path d="M0 0H512V512H0Z M182 196.25 L0 196.25 L0 316.25 L147.5 316.25Z" clip-rule="evenodd"/></clipPath>
+      <clipPath id="fb-inER"><ellipse rx="112.5" ry="125" transform="translate(340.75 256) skewX(-10.8)"/></clipPath>
+      <g id="fb-mark">
+        <g transform="translate(256 336) scale(.8) translate(-256 -257)">
+          <g fill="#0b091f" stroke="#0b091f" stroke-width="22">
+            <ellipse rx="112.5" ry="125" transform="translate(340.75 256) skewX(-10.8)"/>
+            <ellipse rx="112.5" ry="125" transform="translate(168 256) skewX(-10.8)"/>
+          </g>
+          <g clip-path="url(#fb-clipL)"><ellipse rx="112.5" ry="125" transform="translate(168 256) skewX(-10.8)" fill="#eaedff"/></g>
+          <ellipse rx="112.5" ry="125" transform="translate(340.75 256) skewX(-10.8)" fill="#eaedff"/>
+          <path fill="#0b091f" clip-path="url(#fb-inER)" d="M364 196.25 L100 196.25 L100 316.25 L330 316.25Z"/>
+        </g>
+      </g>
+      <path id="fb-flame-outer" d="M256 476 C140 476 46 404 46 300 C46 222 86 168 116 104 C136 156 158 184 190 200 C178 128 210 66 272 6 C302 88 350 128 354 190 C376 158 402 118 422 66 C458 148 468 222 468 300 C468 404 372 476 256 476Z"/>
+      <path id="fb-flame-inner" d="M258 420 C176 420 128 366 128 300 C128 240 162 204 184 160 C198 194 214 212 240 222 C236 170 254 128 292 84 C308 142 352 180 368 230 C378 256 384 278 384 300 C384 368 336 420 258 420Z"/>
+      <symbol id="fb-logo" viewBox="0 0 512 512">
+        <g transform="translate(256 262) scale(.84) translate(-256 -250)">
+          <g transform="translate(256 256) skewX(-10.8) translate(-256 -256)">
+            <use href="#fb-flame-outer" fill="#ff4d1f"/>
+            <use href="#fb-flame-inner" fill="#ffb021"/>
+          </g>
+          <use href="#fb-mark"/>
+        </g>
+      </symbol>
+      <symbol id="fb-flame" viewBox="0 0 512 512">
+        <g transform="translate(256 256) skewX(-10.8) translate(-256 -256)">
+          <use href="#fb-flame-outer" fill="#ff4d1f"/>
+          <use href="#fb-flame-inner" fill="#ffb021"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="nav" data-nav>
+    <a class="brand" href="#top" aria-label="Fomo Burn home">
+      <svg class="brand__logo" viewBox="0 0 512 512" aria-hidden="true"><use href="#fb-logo"/></svg>
+      <span class="brand__name">fomo<b>burn</b></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#ledger">Burn log</a>
+      <a href="#tokenomics">Tokenomics</a>
+    </nav>
+    <a class="btn btn--small btn--fire" href="https://fomo.family/" target="_blank" rel="noopener" data-fomo-link><span>Post a thesis</span></a>
+  </header>
+
+  <main id="main">
+    <!-- ───────── HERO ───────── -->
+    <section class="hero" id="top">
+      <div class="hero__bg" aria-hidden="true">
+        <img class="hero__earth" data-parallax
+             src="assets/hero-earth-1600.webp"
+             srcset="assets/hero-earth-960.webp 960w, assets/hero-earth-1600.webp 1600w, assets/hero-earth-2400.webp 2400w"
+             sizes="(max-width: 700px) 220vw, 100vw" alt="" fetchpriority="high" decoding="async">
+        <canvas class="hero__sparks" data-sparks></canvas>
+        <div class="hero__shade"></div>
+      </div>
+
+      <div class="hero__inner">
+        <div class="hero__logo-wrap" data-tilt>
+          <div class="hero__glow" aria-hidden="true"></div>
+          <svg class="hero__logo" viewBox="0 0 512 512" role="img" aria-label="Fomo Burn logo">
+            <g transform="translate(256 262) scale(.84) translate(-256 -250)">
+              <g transform="translate(256 256) skewX(-10.8) translate(-256 -256)">
+                <path class="flame flame--outer" fill="#ff4d1f" d="M256 476 C140 476 46 404 46 300 C46 222 86 168 116 104 C136 156 158 184 190 200 C178 128 210 66 272 6 C302 88 350 128 354 190 C376 158 402 118 422 66 C458 148 468 222 468 300 C468 404 372 476 256 476Z"/>
+                <path class="flame flame--inner" fill="#ffb021" d="M258 420 C176 420 128 366 128 300 C128 240 162 204 184 160 C198 194 214 212 240 222 C236 170 254 128 292 84 C308 142 352 180 368 230 C378 256 384 278 384 300 C384 368 336 420 258 420Z"/>
+              </g>
+              <use href="#fb-mark"/>
+            </g>
+          </svg>
+        </div>
+
+        <p class="pill load" style="--d:1"><span class="pill__dot" aria-hidden="true"></span>fomo.family<span class="pill__sep" aria-hidden="true">·</span>3% buy / 3% sell</p>
+        <h1 class="hero__title">
+          <span class="line load" style="--d:2">Every thesis</span>
+          <span class="line load" style="--d:3"><span class="burn-word" data-burn-word>burns</span> the&nbsp;supply.</span>
+        </h1>
+        <p class="hero__lede load" style="--d:4">
+          Post your thesis on the token's fomo page. For every thesis, the dev takes the trading fees, buys the token back and burns it on-chain.
+        </p>
+        <div class="hero__actions load" style="--d:5">
+          <a class="btn btn--fire btn--big" href="https://fomo.family/" target="_blank" rel="noopener" data-fomo-link>
+            <span>Post your thesis</span>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn--glass btn--big" href="#how"><span>How the burn works</span></a>
+        </div>
+        <div class="ca load" style="--d:6">
+          <span class="ca__label">CA</span>
+          <code class="ca__value" data-ca>Announced at launch</code>
+          <button class="ca__copy" type="button" data-copy-ca disabled aria-label="Copy contract address">
+            <span data-copy-label>Copy</span>
+          </button>
+        </div>
+      </div>
+
+      <section class="stats load" style="--d:7" aria-label="Burn stats">
+        <dl class="stats__grid">
+          <div class="stat"><dt>Theses posted</dt><dd data-stat="theses">—</dd></div>
+          <div class="stat"><dt>Tokens burned</dt><dd data-stat="burned">—</dd></div>
+          <div class="stat"><dt>Supply burned</dt><dd data-stat="supplyPct">—</dd></div>
+          <div class="stat"><dt>Burn transactions</dt><dd data-stat="burns">—</dd></div>
+        </dl>
+        <p class="stats__note" data-stats-note><span class="live-dot" aria-hidden="true"></span>Live counters switch on at launch</p>
+      </section>
+    </section>
+
+    <!-- ───────── BANDS ───────── -->
+    <div class="bands" aria-hidden="true">
+      <div class="band band--lav">
+        <div class="band__track band__track--rev">
+          <span>Thesis in</span><span>Supply out</span><span>Thesis in</span><span>Supply out</span><span>Thesis in</span><span>Supply out</span>
+          <span>Thesis in</span><span>Supply out</span><span>Thesis in</span><span>Supply out</span><span>Thesis in</span><span>Supply out</span>
+        </div>
+      </div>
+      <div class="band band--fire">
+        <div class="band__track">
+          <span>Post a thesis</span><span>3% buy tax</span><span>3% sell tax</span><span>Fees buy back</span><span>Buyback gets burned</span>
+          <span>Post a thesis</span><span>3% buy tax</span><span>3% sell tax</span><span>Fees buy back</span><span>Buyback gets burned</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────── HOW ───────── -->
+    <section class="how" id="how" aria-labelledby="how-title" data-fuse-section>
+      <header class="section-head">
+        <p class="eyebrow rv">How it works</p>
+        <h2 id="how-title" class="rv">Your thesis is the match.<br><span class="muted">The fees are the fuel.</span></h2>
+      </header>
+
+      <div class="fuse" aria-hidden="true">
+        <div class="fuse__track"></div>
+        <div class="fuse__burnt" data-fuse-burnt></div>
+        <svg class="fuse__spark" data-fuse-spark viewBox="0 0 512 512"><use href="#fb-flame"/></svg>
+      </div>
+
+      <ol class="steps">
+        <li class="step rv" data-step="0">
+          <span class="step__num">01</span>
+          <div class="step__icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><path d="M16 8h24l10 10v38H16z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M22 30h20M22 38h20M22 46h12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M22 22l6-5 5 4 8-7" fill="none" stroke="var(--fire)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Post your thesis</h3>
+          <p>Go to the token's page on fomo and post why you're in. Bull case, meme, prophecy: every thesis counts.</p>
+          <span class="step__tag">On fomo.family</span>
+        </li>
+        <li class="step rv" data-step="1" style="--rv-d:1">
+          <span class="step__num">02</span>
+          <div class="step__icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><ellipse cx="32" cy="18" rx="18" ry="7" fill="none" stroke="currentColor" stroke-width="3"/><path d="M14 18v10c0 4 8 7 18 7s18-3 18-7V18M14 28v10c0 4 8 7 18 7s18-3 18-7V28M14 38v8c0 4 8 7 18 7s18-3 18-7v-8" fill="none" stroke="currentColor" stroke-width="3"/><text x="32" y="22" text-anchor="middle" font-size="9" font-weight="800" fill="var(--fire)" font-family="Bricolage Grotesque, sans-serif">3%</text></svg>
+          </div>
+          <h3>Fees stack up</h3>
+          <p>Every buy and every sell pays a 3% tax. Those fees go to one place: the burn.</p>
+          <span class="step__tag">3% buy · 3% sell</span>
+        </li>
+        <li class="step rv" data-step="2" style="--rv-d:2">
+          <span class="step__num">03</span>
+          <div class="step__icon step__icon--flame" aria-hidden="true">
+            <svg viewBox="0 0 512 512"><use href="#fb-flame"/></svg>
+          </div>
+          <h3>Dev buys &amp; burns</h3>
+          <p>For each thesis, the dev uses the fees to buy the token back and burns it to a dead address. Verifiable on-chain.</p>
+          <span class="step__tag">Supply goes down</span>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ───────── BURN LOG ───────── -->
+    <section class="ledger" id="ledger" aria-labelledby="ledger-title">
+      <header class="section-head section-head--row">
+        <div>
+          <p class="eyebrow rv">Burn log</p>
+          <h2 id="ledger-title" class="rv">One thesis in.<br><span class="muted">One burn out.</span></h2>
+        </div>
+        <p class="section-head__aside rv">Every thesis on the token's fomo page gets a receipt here: who posted it, how much was bought back, and the burn transaction.</p>
+      </header>
+
+      <div class="ledger__list" data-ledger aria-live="polite"></div>
+
+      <template id="receipt-tpl">
+        <article class="receipt">
+          <div class="receipt__who">
+            <span class="receipt__avatar" aria-hidden="true"></span>
+            <div><strong class="receipt__name"></strong><time class="receipt__time"></time></div>
+          </div>
+          <p class="receipt__thesis"></p>
+          <div class="receipt__burn">
+            <span class="stamp">Burned</span>
+            <span class="receipt__amount"></span>
+            <a class="receipt__tx" target="_blank" rel="noopener">View tx ↗</a>
+          </div>
+        </article>
+      </template>
+
+      <div class="ledger__empty rv" data-ledger-empty>
+        <div class="ledger__media">
+          <img src="assets/ledger-thesis-1000.webp" srcset="assets/ledger-thesis-560.webp 560w, assets/ledger-thesis-1000.webp 1000w"
+               sizes="(max-width: 900px) 90vw, 460px" width="1000" height="1000" loading="lazy" decoding="async"
+               alt="A handwritten trading thesis with an upward chart, burning at the edges">
+          <span class="stamp stamp--big" aria-hidden="true">Burned</span>
+        </div>
+        <div class="ledger__copy">
+          <p class="eyebrow">Waiting for launch</p>
+          <h3>The first burn is waiting for a thesis.</h3>
+          <p>No theses yet. The log goes live with the token. Be the first name on the pyre.</p>
+          <a class="btn btn--fire" href="https://fomo.family/" target="_blank" rel="noopener" data-fomo-link><span>Post the first thesis</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── TOKENOMICS ───────── -->
+    <section class="tokenomics" id="tokenomics" aria-labelledby="tok-title">
+      <header class="section-head">
+        <p class="eyebrow rv">Tokenomics</p>
+        <h2 id="tok-title" class="rv">Simple on purpose.</h2>
+      </header>
+      <div class="tok">
+        <div class="tok__big rv">
+          <p class="tok__num"><span data-count="3">3</span><small>%</small></p>
+          <p class="tok__label">Buy tax</p>
+        </div>
+        <div class="tok__big tok__big--amber rv" style="--rv-d:1">
+          <p class="tok__num"><span data-count="3">3</span><small>%</small></p>
+          <p class="tok__label">Sell tax</p>
+        </div>
+        <dl class="tok__facts rv" style="--rv-d:2">
+          <div><dt>Fees go to</dt><dd>Buyback &amp; burn</dd></div>
+          <div><dt>Burn trigger</dt><dd>Every thesis posted</dd></div>
+          <div><dt>Where</dt><dd>The token's page on fomo</dd></div>
+        </dl>
+      </div>
+
+      <div class="flow rv" aria-label="Where the fees go: trade, 3% fee, buyback, burn">
+        <div class="flow__node"><span class="flow__k">01</span>Trade</div>
+        <div class="flow__pipe" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="flow__node"><span class="flow__k">02</span>3% fee</div>
+        <div class="flow__pipe" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="flow__node"><span class="flow__k">03</span>Buyback</div>
+        <div class="flow__pipe" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="flow__node flow__node--hot"><svg viewBox="0 0 512 512" aria-hidden="true"><use href="#fb-flame"/></svg>Burn</div>
+      </div>
+    </section>
+
+    <!-- ───────── FINAL CTA ───────── -->
+    <section class="final" aria-labelledby="final-title">
+      <div class="final__media" aria-hidden="true">
+        <img src="assets/cta-astronaut-1100.webp" srcset="assets/cta-astronaut-640.webp 640w, assets/cta-astronaut-1100.webp 1100w"
+             sizes="(max-width: 900px) 100vw, 50vw" width="1100" height="1375" loading="lazy" decoding="async" alt="" data-parallax-soft>
+      </div>
+      <div class="final__copy">
+        <p class="eyebrow rv">Your move</p>
+        <h2 id="final-title" class="rv">Got conviction?<br><span>Light it up.</span></h2>
+        <p class="final__lede rv">One thesis. One buyback. One less token in circulation. Carry the torch.</p>
+        <a class="btn btn--fire btn--big rv" href="https://fomo.family/" target="_blank" rel="noopener" data-fomo-link><span>Post your thesis on fomo</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="#top" aria-label="Back to top">
+      <svg class="brand__logo" viewBox="0 0 512 512" aria-hidden="true"><use href="#fb-logo"/></svg>
+      <span class="brand__name">fomo<b>burn</b></span>
+    </a>
+    <p class="footer__note">Community project built on fomo.family, not affiliated with fomo. Crypto is risky: never buy more than you can afford to lose.</p>
+    <nav class="footer__links" aria-label="Links">
+      <a href="https://fomo.family/" target="_blank" rel="noopener" data-fomo-link>fomo</a>
+      <a data-social="x" hidden target="_blank" rel="noopener">X</a>
+      <a data-social="telegram" hidden target="_blank" rel="noopener">Telegram</a>
+    </nav>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+  <script src="main.js" defer></script>
+</body>
+</html>
