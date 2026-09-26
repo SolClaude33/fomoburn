@@ -1,16 +1,17 @@
-// Fomo Burn — launch config. Fill these in when the token goes live.
+// Fomo Burn — launch config. Values come from config.js, which Vercel generates
+// from env vars at build time (FOMO_CA, FOMO_TICKER, FOMO_TOKEN_URL, FOMO_X_URL, FOMO_TELEGRAM_URL).
+const CFG = window.FOMO_CONFIG || {};
 const TOKEN = {
-  ticker: null,        // e.g. "$BURN"
-  chain: null,         // e.g. "Solana"
-  ca: null,            // contract address
-  fomoUrl: null,       // the token's page on fomo.family (where theses are posted)
+  ticker: CFG.ticker ?? null,    // e.g. "$BURN"
+  ca: CFG.ca ?? null,            // contract address
+  fomoUrl: CFG.fomoUrl ?? null,  // the token's page on fomo.family (where theses are posted)
 };
 
 // Burn stats. Source: the token's fomo page (wiring TBD). null = not live yet.
 const STATS = { theses: null, burned: null, supplyPct: null, burns: null };
 
 // Social links. null = hidden.
-const SOCIALS = { x: null, telegram: null };
+const SOCIALS = { x: CFG.x ?? null, telegram: CFG.telegram ?? null };
 
 // Burn receipts: one per thesis. Source: the token's fomo page (wiring TBD).
 // Shape: { author, avatar, postedAt (ISO), thesis, burned (number), txUrl }
@@ -73,8 +74,8 @@ function applyLedger() {
 
 function applyMeta() {
   for (const [key, url] of Object.entries(SOCIALS)) {
-    const a = document.querySelector(`[data-social="${key}"]`);
-    if (a && url) { a.href = url; a.hidden = false; }
+    if (!url) continue;
+    document.querySelectorAll(`[data-social="${key}"]`).forEach((a) => { a.href = url; a.hidden = false; });
   }
 }
 

@@ -18,10 +18,11 @@ Fomo Burn: a site built around fomo.family where people post their thesis. For e
 - Direction: "Orbital burn". It borrows fomo.family's space look (Earth from orbit, an astronaut) with the horizon on fire, uses the flat logo and brand shapes on top of photo-real space, and keeps fire as the only warm accent. The -10.8° skew is the recurring motif (buttons, stamps, numbers, canvas sparks). Avoid gradients on the logo and generic crypto neon.
 - Motion (`main.js`, CSS): a staggered entrance on load, sparks on a canvas that pause when off-screen, parallax on the Earth and the astronaut, a fuse in How it works that burns with scroll and lights the steps, `.rv` reveals via IntersectionObserver (they use `translate`, not `transform`, so they don't clash with the skew), marquee bands and grain. Everything turns off under `prefers-reduced-motion`.
 - Tokens live in `:root` in `styles.css`. Fonts: Bricolage Grotesque (display), Instrument Sans (body), Martian Mono (data). Spacing is on an 8pt grid. Radii are 10/20/28px. Easing is `--ease-out` / `--ease-snap`.
-- Launch data goes in `main.js`: `TOKEN` (ticker, CA, fomo page URL), `STATS`, `RECEIPTS` and `SOCIALS`. Any value left `null` or empty keeps the page's empty state; never invent numbers. The data source is the token's page on fomo.family, and how to pull from it is not decided yet.
+- Launch data: the CA, ticker, fomo URL and socials come from Vercel env vars `FOMO_CA`, `FOMO_TICKER`, `FOMO_TOKEN_URL`, `FOMO_X_URL` and `FOMO_TELEGRAM_URL` (URLs must be https). `scripts/build.mjs` has no dependencies: it copies the site to `dist/` and writes `dist/config.js`. The committed `config.js` holds null defaults for local work. `STATS` and `RECEIPTS` in `main.js` stay empty, which keeps the empty state; never invent numbers.
 
 ## Commands
 - Local preview: the `fomo-burn` config in the parent repo's `.claude/launch.json` runs `python -m http.server 5173`.
+- Production build: `node scripts/build.mjs` writes `dist/` (Vercel runs it via `vercel.json`). Env var changes only take effect after a redeploy.
 - PNG export: headless Edge with `--screenshot` over the SVG.
 
 ## Limits

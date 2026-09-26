@@ -2,3 +2,4 @@ assets-src/*.png
 !assets-src/fomo-logo-original.png
 .DS_Store
 Thumbs.db
+dist/

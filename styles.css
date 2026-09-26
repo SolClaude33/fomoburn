@@ -125,6 +125,15 @@ section[id] { scroll-margin-top: 72px; }
   transform: skewX(var(--skew)) scaleX(0); transform-origin: left; transition: transform var(--dur-2) var(--ease-out);
 }
 .nav__links a:hover { color: var(--lav); }
+.nav__actions { display: flex; align-items: center; gap: var(--s-2); }
+.nav__x {
+  display: grid; place-items: center; width: 40px; height: 40px; border-radius: var(--r-sm);
+  color: var(--lav); background: rgba(234, 237, 255, .08); box-shadow: inset 0 0 0 1px var(--line-2);
+  transition: background var(--dur-1), color var(--dur-1), transform var(--dur-2) var(--ease-snap);
+}
+.nav__x[hidden] { display: none; }
+.nav__x svg { width: 18px; height: 18px; }
+.nav__x:hover { background: var(--lav); color: var(--navy); transform: rotate(-6deg); }
 .nav__links a:hover::after { transform: skewX(var(--skew)) scaleX(1); }
 
 /* ───────── hero ───────── */
